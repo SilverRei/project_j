@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The_Little_Prince</title>
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 모바일 -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <!-- 스크롤 초기화 -->
+    <script>history.scrollRestoration = "manual"</script>
+<script>
+        $(document).ready(function(){
+            // 스크롤_배경
+            $(window).scroll(function(){
+                sc = $(window).scrollTop();
+                scL = 0;
+                $("#sc").text(sc)
+                if(sc > $(".page3_5").offset().top && sc<= 9850){
+                    scL = sc-($(".page3_5").offset().top)
+                    $(".page3_5>.sticky").css({"margin-left":-scL*0.5})
+                }
+            })
+
+        })
+</script>
+<style>
+    * { margin: 0; padding: 0; list-style: none; }
+    a { text-decoration: none; color: inherit; }
+
+    .wrap {  }
+    .wrap>div { background-size: cover; width: 1920px; height: 1080px; }
+    .wrap>.page1 { background: url(images/wrap/bg/bg_01.jpg); }
+    .wrap>.page2 { background: url(images/wrap/bg/bg_02.jpg); }
+
+    .wrap>.page3_5 { width: 1920px; height: 8600px; position: relative; }
+    .wrap>.page3_5>.sticky { width: 5760px; height: 1080px; position: sticky; top: 0; }
+
+    .wrap .bg { position: absolute; left: 0; top: 0; }
+    .wrap .bg>li { width: 1920px; height: 1080px; background-size: cover; float: left; }
+
+    .wrap .bg>.page3 { background: url(images/wrap/bg/bg_03.jpg); }
+    .wrap .bg>.page4 { background: url(images/wrap/bg/bg_04.jpg); }
+    .wrap .bg>.page5 { background: url(images/wrap/bg/bg_05.jpg); }
+
+    .wrap .line { position: absolute; left: 0; top: 0; }
+    .wrap .line>li { float: left; }
+    .wrap .line>li>img { width: 100%; }
+
+    .wrap .page6 { background: url(images/wrap/bg/bg_06.jpg); }
+    .wrap .page7 { background: url(images/wrap/bg/bg_07.jpg); }
+    .wrap .page8 { background: url(images/wrap/bg/bg_08.jpg); }
+    .wrap .page9 { background: url(images/wrap/bg/bg_09.jpg); }
+
+    #sc { font-size: 100px; background-color: #222; color: #ff0; position: fixed; left: 0;top: 0; }
+</style>
+<style>
+    @media all and (min-width: 320px){
+
+    }
+    @media all and (min-width: 768px){
+
+    }
+    @media all and (min-width: 1024px){
+
+    }
+    @media all and (min-width: 1600px){
+
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="page1">
+            <img src="images/wrap/line/line_01.png" alt="">
+        </div>
+        <div class="page2">
+            <img src="images/wrap/line/line_02.png" alt="">
+        </div>
+        <div class="page3_5">
+            <div class="sticky">
+                <ul class="bg">
+                    <li class="page3">
+
+                    </li>
+                    <li class="page4">
+
+                    </li>
+                    <li class="page5">
+
+                    </li>
+                </ul>
+                <ul class="line">
+                    <li class="page3">
+                        <img src="images/wrap/line/line_03.png" alt="">
+                    </li>
+                    <li class="page4">
+                        <img src="images/wrap/line/line_04.png" alt="">
+                    </li>
+                    <li class="page5">
+                        <img src="images/wrap/line/line_05.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="page6">
+            <img src="images/wrap/line/line_06.png" alt="">
+        </div>
+        <div class="page7">
+            <img src="images/wrap/line/line_07.png" alt="">
+        </div>
+        <div class="page8">
+
+        </div>
+        <div class="page9">
+
+        </div>
+    </div>
+    <h1 id="sc">0</h1>
+</body>
+</html>
